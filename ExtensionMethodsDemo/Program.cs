@@ -29,7 +29,9 @@ namespace Treehouse.ExtensionMethodsDemo
                 "ideal"
             };
 
-            Console.WriteLine($"My dog Jojo is the {synonymsForBest.RandomItem()} dog!");
+            var best = synonymsForBest.FirstOr(s => s.Length.IsEven(), synonymsForBest.RandomItem);
+
+            Console.WriteLine($"My dog Jojo is the {best} dog!");
             Console.ReadLine();
         }
     }
