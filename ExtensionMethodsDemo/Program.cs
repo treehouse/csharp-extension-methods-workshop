@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Treehouse.Collections.Generic;
 
 namespace Treehouse.ExtensionMethodsDemo
 {
@@ -27,14 +28,8 @@ namespace Treehouse.ExtensionMethodsDemo
                 "ideal"
             };
 
-            Console.WriteLine($"My dog Jojo is the {GetRandomItem(synonymsForBest)} dog!");
+            Console.WriteLine($"My dog Jojo is the {synonymsForBest.RandomItem()} dog!");
             Console.ReadLine();
-        }
-
-        private static string GetRandomItem(List<string> list)
-        {
-            var random = new Random();
-            return list[random.Next(0, list.Count)];
         }
     }
 }
